@@ -47,7 +47,7 @@ params = Params()
      
 
 def main(
-    server_name: str = "0.0.0.0",
+    server_name: str = "127.0.0.1",
     share_gradio: bool = True,
 ):
     prompter = Prompter()
@@ -86,7 +86,7 @@ def main(
     ):
         prompt = prompter.generate_prompt(text, context)
         inputs = tokenizer(prompt, return_tensors="pt")
-        input_ids = inputs["input_ids"].to(params.device)
+        input_ids = inputs["input_ids"].to(device)
         generation_config = GenerationConfig(
             temperature=temperature,
             top_p=top_p,
@@ -163,7 +163,7 @@ def main(
         ]
     )
     iface.queue()
-    iface.launch(server_name="0.0.0.0", share=share_gradio)
+    iface.launch(server_name=server_name, share=share_gradio)
 
 
 if __name__ == "__main__":

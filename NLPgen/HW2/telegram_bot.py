@@ -85,7 +85,7 @@ def main(
     if torch.__version__ >= "2" and sys.platform != "win32":
         joey_model = torch.compile(joey_model)
         if not params.load_in_8bit:
-            model.half() 
+            joey_model.half() 
 
 
     def generate_reply(

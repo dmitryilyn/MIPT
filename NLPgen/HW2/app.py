@@ -70,7 +70,7 @@ def main(
     joey_model.eval()
     if torch.__version__ >= "2" and sys.platform != "win32":
         joey_model = torch.compile(joey_model)
-        if not load_8bit:
+        if not params.load_in_8bit:
             model.half() 
 
 

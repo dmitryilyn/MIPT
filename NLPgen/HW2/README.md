@@ -38,7 +38,8 @@
 Запуск `python telegram_bot.py`.
 
 # 5. Docker
-Сборка:
+Сборка:\
 `docker build -t joey-bot .`
-Запуск:
+
+Запуск:\
 `docker run --gpus=all -p 127.0.0.1:7860:7860 joey-bot`
